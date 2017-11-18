@@ -16,6 +16,24 @@ header#main-header {
 	z-index: 5;
 }
 
+.btn.hot {
+	background: #ba0d0d;
+	padding: 10px;
+	border-radius: 8px;
+	color: #fff;
+}
+
+a#logo {
+	display: block;
+	background: url(../images/logo.png);
+	background-repeat: no-repeat;
+	width:302px;
+	height: 50px;
+	margin: 20px 0px;
+	margin-left: 15px;
+	float: left;
+}
+
 #sub-header {
 	max-height: 600px;
 	overflow: hidden;
@@ -94,8 +112,8 @@ footer {
 (min-resolution: 192dpi) { 
     /* Retina-specific stuff here */
  	a#logo {
-		background: url(../images/logo-header@2x.png);
-		background-size: 200px 68px;
+		background: url(../images/logo@2x.png);
+		background-size: 302px 50px;
 	}
 
 	a#facebook {
@@ -134,8 +152,4 @@ footer {
 		display: none;
 	}
 	
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 7238233f2f0697c3fde689c45584187e5172c32b

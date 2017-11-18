@@ -16,6 +16,17 @@ header#main-header {
 	z-index: 5;
 }
 
+a#logo {
+	display: block;
+	background: url(../images/logo.png);
+	background-repeat: no-repeat;
+	width:354px;
+	height: 60px;
+	margin: 10px 0px;
+	margin-left: 15px;
+	float: left;
+}
+
 #sub-header {
 	max-height: 600px;
 	overflow: hidden;
@@ -94,8 +105,8 @@ footer {
 (min-resolution: 192dpi) { 
     /* Retina-specific stuff here */
  	a#logo {
-		background: url(../images/logo-header@2x.png);
-		background-size: 200px 68px;
+		background: url(../images/logo@2x.png);
+		background-size: 354px 60px;
 	}
 
 	a#facebook {
