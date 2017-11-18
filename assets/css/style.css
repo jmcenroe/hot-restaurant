@@ -16,6 +16,26 @@ header#main-header {
 	z-index: 5;
 }
 
+.btn.hot {
+	background: #ba0d0d;
+	padding: 10px;
+	border-radius: 5px;
+	color: #fff;
+	cursor: pointer;
+	margin: 3px;
+}
+
+a#logo {
+	display: block;
+	background: url(../images/logo.png);
+	background-repeat: no-repeat;
+	width:302px;
+	height: 50px;
+	margin: 20px 0px;
+	margin-left: 15px;
+	float: left;
+}
+
 #sub-header {
 	max-height: 600px;
 	overflow: hidden;
@@ -27,6 +47,11 @@ header#main-header {
 	min-height: 400px;
 	border-radius: 10px;
 	padding: 30px;
+}
+
+.center {
+	text-align: center;
+	margin: 30px 0 30px 0;
 }
 
 h1, h2, h3 {
@@ -89,13 +114,30 @@ footer {
 	margin-top: 100px;
 }
 
+/* tables.html */
+
+h2 {
+	text-align: left;
+}
+
+.table-row {
+	width: 100%;
+	background-color: #eee;
+	padding: 20px;
+	margin: 10px;
+}
+
+#current {
+	margin-bottom: 30px;
+}
+
 @media 
 (-webkit-min-device-pixel-ratio: 2), 
 (min-resolution: 192dpi) { 
     /* Retina-specific stuff here */
  	a#logo {
-		background: url(../images/logo-header@2x.png);
-		background-size: 200px 68px;
+		background: url(../images/logo@2x.png);
+		background-size: 302px 50px;
 	}
 
 	a#facebook {
@@ -134,8 +176,4 @@ footer {
 		display: none;
 	}
 	
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 7238233f2f0697c3fde689c45584187e5172c32b
