@@ -4,6 +4,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
 
+
 // Sets up the Express App
 // =============================================================
 var app = express();
@@ -15,18 +16,18 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 var reservations = [{
-    customerName: 'Reserved Test',
-    phoneNumber: 5555555,
-    customerEmail: 'fake@fake.com',
-    customerID: "12" 
+    name: 'Reserved Test',
+    phone: 5555555,
+    email: 'fake@fake.com',
+    uniqueID: "12" 
 }
 
 ];
 var waitList = [{
-    customerName: 'test',
-    phoneNumber: 5555555,
-    customerEmail: 'fake@fake.com',
-    customerID: "1" 
+    name: 'test',
+    phone: 5555555,
+    email: 'fake@fake.com',
+    uniqueID: "1" 
 }
 ];
 
@@ -58,3 +59,58 @@ app.get('/api/waitlist', function(req,res) {
 app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
+
+app.post("/api/new", function(req, res) {
+  // req.body hosts is equal to the JSON post sent from the user
+  // This works because of our body-parser middleware
+  var newcharacter = req.body;
+  
+  console.log(newcharacter);
+
+  //Check uniqueId against existing reservations and waitlist
+  var found = false;
+  var place = '';
+  for (var i = 0; i < reservations.length && !found; i++) {
+  	if (newcharacter.uniqueID === reservations[i].uniqueID) 
+  	{
+  		found = true;
+  		place = 'reservation';
+  	}
+  }
+
+  for (var i = 0; i < waitList.length && !found; i++) {
+  	if (newcharacter.uniqueID === waitList[i].uniqueID) 
+  	{
+  		found=true;
+  		place='wait';
+  	}
+  }
+
+  if (found) {
+  	console.log('You are already on the ' + place + ' list.');
+  }
+  else {
+  	  console.log('Congratulation, your id is unique');
+	  if (makeReservation(newcharacter)) {
+	  	console.log('You have been placed on the reservation list');
+	  }
+	  else {
+	  	console.log('You have been placed on the wait list');
+	  }
+  }
+
+ });
+
+function makeReservation(data) {
+
+	if (reservations.length < 5) {
+		reservations.push(data);
+		return true;
+	}
+	else {
+		waitList.push(data);
+		return false;
+	}
+
+
+}
