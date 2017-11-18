@@ -14,8 +14,21 @@ var PORT = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-var reservations = [];
-var waitList = [];
+var reservations = [{
+    customerName: 'Reserved Test',
+    phoneNumber: 5555555,
+    customerEmail: 'fake@fake.com',
+    customerID: "12" 
+}
+
+];
+var waitList = [{
+    customerName: 'test',
+    phoneNumber: 5555555,
+    customerEmail: 'fake@fake.com',
+    customerID: "1" 
+}
+];
 
 
 
@@ -32,11 +45,11 @@ app.get('/reserve', function(req,res) {
 });
 
 app.get('/api/tables', function(req,res) {
-    res.json(res.tables);
+    res.json(reservations);
 });
 
 app.get('/api/waitlist', function(req,res) {
-    res.json(res.waitlist);
+    res.json(waitList[0]);
 });
 
 
