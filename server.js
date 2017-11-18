@@ -14,12 +14,15 @@ var PORT = process.env.PORT || 3000;
 // Sets up the Express app to handle data parsing
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(express.static('public'));
 
 var reservations = [{
     name: 'Reserved Test',
     phone: 5555555,
     email: 'fake@fake.com',
-    uniqueID: "12" 
+    uniqueID: "12",
+    accepted: true,
+    place: 'reservation'
 }
 
 ];
@@ -27,22 +30,24 @@ var waitList = [{
     name: 'test',
     phone: 5555555,
     email: 'fake@fake.com',
-    uniqueID: "1" 
+    uniqueID: "1",
+    accepted: true,
+    place: 'wait'
 }
 ];
 
 
 
 app.get('/', function(req, res){
-    res.sendFile(path.join(__dirname, "test/index.html"));
+    res.sendFile(path.join(__dirname, "index.html"));
 });
 
 app.get('/tables', function(req, res) {
-    res.sendFile(path.join(__dirname, "test/tables.html"));
+    res.sendFile(path.join(__dirname, "tables.html"));
 });
 
 app.get('/reserve', function(req,res) {
-    res.sendFile(path.join(__dirname, "test/reserve.html"));
+    res.sendFile(path.join(__dirname, "reservations.html"));
 });
 
 app.get('/api/tables', function(req,res) {
@@ -50,7 +55,7 @@ app.get('/api/tables', function(req,res) {
 });
 
 app.get('/api/waitlist', function(req,res) {
-    res.json(waitList[0]);
+    res.json(waitList);
 });
 
 
@@ -107,3 +112,24 @@ app.post("/api/new", function(req, res) {
 
  });
 
+app.post('/api/confirm', function (req,res) {
+
+	var reservationused = req.body.uniqueID;
+
+	console.log(reservationused);
+
+	for (var i = 0; i < reservations.length; i++) {
+		if (reservationused === reservations[i].uniqueID) {
+			if (waitList.length > 0) {
+				reservations[i]=waitList[0];
+				waitList.splice(0,1);
+			}
+			else {
+				reservations.splice(i,1);
+			}
+		}
+	}
+
+	res.send('Reservation used.');
+
+});
