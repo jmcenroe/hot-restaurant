@@ -87,30 +87,23 @@ app.post("/api/new", function(req, res) {
   }
 
   if (found) {
-  	console.log('You are already on the ' + place + ' list.');
+  	newcharacter.accepted=false;
+  	newcharacter.place=place;
   }
   else {
-  	  console.log('Congratulation, your id is unique');
-	  if (makeReservation(newcharacter)) {
-	  	console.log('You have been placed on the reservation list');
+  	  newcharacter.accepted=true;
+	  if (reservations.length < 5) {
+	  	newcharacter.place = 'reservation';
+	  	reservations.push(newcharacter);
 	  }
 	  else {
-	  	console.log('You have been placed on the wait list');
+	  	newcharacter.place = 'wait'
+	  	waitList.push(newcharacter);
 	  }
+
   }
+
+  res.json(newcharacter);
 
  });
 
-function makeReservation(data) {
-
-	if (reservations.length < 5) {
-		reservations.push(data);
-		return true;
-	}
-	else {
-		waitList.push(data);
-		return false;
-	}
-
-
-}
