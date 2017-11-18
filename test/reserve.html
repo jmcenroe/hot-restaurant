@@ -17,7 +17,7 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-sm-12 col-md-12 col-lg-12">
-					<a href="index.html" id="logo"></a>
+					<a href="/" id="logo"></a>
 					<ul id="social-media">	
 						<li>Follow Us</li>
 						<li><a id="facebook" href="#"></a></li>
@@ -77,7 +77,7 @@
 		</div>
 	</footer>
 	<script type="text/javascript">
-		// Question: What does this code do?
+		
 		$("#add-btn").on("click", function(event) {
 		  event.preventDefault();
 		  var newReservation = {
@@ -87,12 +87,22 @@
 			uniqueID: $("#reserve_uniqueID").val().trim()
 		  };
 	
-		  // Question: What does this code do??
+		 
 		  
 		  $.post("/api/new", newReservation)
 		  .done(function(data) {
 			console.log(data);
-			alert("Adding character...");
+			if (data.accepted === true) {
+				if (data.place === 'reservation') {
+					alert('Congratulations, you now have a reservation.');
+				}
+				else {
+					alert('Reservations are full, but you have been placed on the waitlist.');
+				}
+			}
+			else {
+				alert ('Your unique ID was already found on the ' + data.place + ' list.');
+			}
 		  });
 		});
 	  </script>
