@@ -114,6 +114,23 @@ footer {
 	margin-top: 100px;
 }
 
+/* tables.html */
+
+h2 {
+	text-align: left;
+}
+
+.table-row {
+	width: 100%;
+	background-color: #eee;
+	padding: 20px;
+	margin: 10px;
+}
+
+#current {
+	margin-bottom: 30px;
+}
+
 @media 
 (-webkit-min-device-pixel-ratio: 2), 
 (min-resolution: 192dpi) { 
