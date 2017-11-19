@@ -16,14 +16,9 @@
 	<header id="main-header">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-sm-12 col-md-12 col-lg-12">
-					<a href="index.html" id="logo"></a>
-					<ul id="social-media">	
-						<li>Follow Us</li>
-						<li><a id="facebook" href="#"></a></li>
-						<li><a id="instagram" href="#"></a></li>
-						<li><a id="twitter" href="#"></a></li>
-					</ul>
+				<div class="col-sm-12">
+					<a href="/" id="logo"></a>
+					
 				</div>
 			</div>
 		</div>
@@ -38,11 +33,11 @@
 	<div section id="main-content">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-12 col-md-12 col-lg-12 book-table">
+				<div class="col-sm-12 book-table">
 					<h2>Make Your Reservation</h2>
 					<div class="center">
-						<a href="tables.html"><button type="button" class="btn hot">View Tables</button></a>
-						<a href="index.html"><button type="button" class="btn hot">Home</button></a>
+						<a href="/tables"><button type="button" class="btn hot">View Tables</button></a>
+						<a href="/"><button type="button" class="btn hot">Home</button></a>
 					</div>
 					<form role="form">
 						<div class="form-group">
@@ -96,7 +91,7 @@
 		  $.post("/api/new", newReservation)
 		  .done(function(data) {
 			console.log(data);
-			alert("Adding character...");
+			alert("Making reservation...");
 		  });
 		});
 	  </script>

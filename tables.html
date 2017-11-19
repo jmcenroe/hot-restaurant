@@ -1,43 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <html>
-
 <head>
-    <meta charset="UTF-8">
-    <title>Hot Restaurant</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Signika|Source+Sans+Pro" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Hot Restaurant</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="assets/css/style.css">
+<link href="https://fonts.googleapis.com/css?family=Signika|Source+Sans+Pro" rel="stylesheet"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-
 <body>
-    <header id="main-header">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-12 col-md-12 col-lg-12">
-                    <a href="/" id="logo"></a>
-                    <ul id="social-media">
-                        <li>Follow Us</li>
-                        <li><a id="facebook" href="#"></a></li>
-                        <li><a id="instagram" href="#"></a></li>
-                        <li><a id="twitter" href="#"></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </header>
-    <div section id="sub-header">
-        <div class="container-fluid">
-            <div class="row">
-                <img class="img-responsive" src="assets/images/food-salad-restaurant-person.jpg">
-            </div>
-        </div>
-    </div>
-    <div section id="main-content">
+	<header id="main-header">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-12 col-md-12 col-lg-12">
+					<a href="/" id="logo"></a>
+					
+				</div>
+			</div>
+		</div>
+	</header>
+	<div id="sub-header">
+		<div class="container-fluid">
+			<div class="row">
+				<img class="img-responsive" src="assets/images/food-salad-restaurant-person.jpg">
+			</div>
+		</div>
+	</div>
+    <div id="main-content">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-12 book-table">
@@ -52,43 +45,127 @@
                     </div>
                     <div class="panel panel-info" id="current">
                             <h4 class="panel-title">Current Reservations</h4>
-                        <div class="panel-body">
-                            <div class="table-row">
-                                <h2>1 |</h2>
+                        <div class="panel-body" id="tableSection">
+                            
                             </div>
-                            <div class="table-row">
-                                <h2>2 |</h2>
-                            </div>
-                            <div class="table-row">
-                                <h2>3 |</h2>
-                            </div>
-                            <div class="table-row">
-                                <h2>4 |</h2>
-                            </div>
-                            <div class="table-row">
-                                <h2>5 |</h2>
-                            </div>
-                        </div>
-                    </div>
+         
                     <div class="panel panel-info" id="wait">
                             <h4 class="panel-title">Wait List</h4>
-                        <div class="panel-body">
-                            <div class="table-row">
-                                <h2>1 |</h2>
-                            </div>
+                        <div class="panel-body" id="waitlistSection">
+                            
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <footer>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-12 col-md-12 col-lg-12">
-                    </div>
-                </div>
-            </div>
-        </footer>
-</body>
+        </div>
 
+</div>
+        <footer>
+
+    </footer>
+	<script type="text/javascript">
+		
+			// In this code, jQuery is used to "download" the data from our server
+			// We then dynamically display this content in our table. This is very similar to the group projects you just completed.
+			// It's also very similar to the NYT search application. In fact, I copied a ton of code from there.
+		
+			function runTableQuery(){
+		
+				// Here we get the location of the root page.
+				// We use this instead of explicitly saying the URL is localhost:3001 because the url will change when we deploy.
+				var currentURL = window.location.origin;
+		
+				// The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
+				$.ajax({url: currentURL + "/api/tables", method: "GET"})
+					.done(function(tableData) {
+		
+						// Here we are logging the URL so we have access to it for troubleshooting
+						console.log("------------------------------------");
+						console.log("URL: " + currentURL + "/api/tables");
+						console.log("------------------------------------");
+		
+						// Here we then log the NYTData to console, where it will show up as an object.
+						console.log(tableData);
+						console.log("------------------------------------")
+		
+						// Loop through and display each of the customers
+						for (var i=0; i<tableData.length; i++){
+		
+							// Create the HTML Well (Section) and Add the table content for each reserved table
+							var tableSection = $("<div>");
+							tableSection.addClass('well table-row');
+							tableSection.attr('id', 'tableWell-' + i+1)
+							$('#tableSection').append(tableSection);
+		
+							var tableNumber = i + 1;
+		
+		
+							// Then display the remaining fields in the HTML (Section Name, Date, URL)
+							$("#tableWell-"+ i+1).append('<h2><span class="label label-primary">' + tableNumber + "</span> | " + tableData[i].uniqueID + "</h2>");
+						}
+					});
+			}
+		
+			function runWaitListQuery(){
+		
+				// Here we get the location of the root page.
+				// We use this instead of explicitly saying the URL is localhost:3001 because the url will change when we deploy.
+				var currentURL = window.location.origin;
+		
+				// The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
+				$.ajax({url: currentURL + "/api/waitlist", method: "GET"})
+					.done(function(waitlistData) {
+		
+						// Here we are logging the URL so we have access to it for troubleshooting
+						console.log("------------------------------------");
+						console.log("URL: " + currentURL + "/api/waitlist");
+						console.log("------------------------------------");
+		
+						// Here we then log the NYTData to console, where it will show up as an object.
+						console.log(waitlistData);
+						console.log("------------------------------------")
+		
+						// Loop through and display each of the customers
+						for (var i=0; i<waitlistData.length; i++){
+		
+							// Create the HTML Well (Section) and Add the table content for each reserved table
+							var waitlistSection = $("<div>");
+							waitlistSection.addClass('well table-row');
+							waitlistSection.attr('id', 'waitlistWell-' + i+1)
+							$('#waitlistSection').append(waitlistSection);
+		
+							var tableNumber = i + 1;
+		
+							// Then display the remaining fields in the HTML (Section Name, Date, URL)
+							$("#waitlistWell-"+ i+1).append('<h2><span class="label label-primary">' + tableNumber + "</span> | " + waitlistData[i].uniqueID + " | " + waitlistData[i].name + "</h2>");
+						}
+					});
+			}
+		
+			// This function resets all of the data in our tables. This is intended to let you restart a demo.
+			function clearTable(){
+		
+				var currentURL = window.location.origin;
+				$.ajax({url: currentURL + "/api/clear", method: "POST"})
+		
+			}
+		
+			$("#clear").on('click', function(){
+				alert("Clearing...");
+				clearTable();
+		
+				// Refresh the page after data is cleared
+				location.reload();
+			})
+		
+		
+			// Run Queries!
+			// ==========================================
+			runTableQuery();
+			runWaitListQuery();
+		
+		
+		</script>	
+</body>
 </html>
